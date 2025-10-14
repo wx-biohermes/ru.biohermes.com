@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8"/>
+  <title>{$meta_title}</title>
+  {template "common/common_top.html"}
+  <link href="{HOME_THEME_PATH}css/page_history.min.css?v=1"
+		rel="stylesheet">
+</head>
+<body>
+<!-- 开始 通用顶部 -->
+{template "common/common_nav.html"}
+<!-- 结束 通用顶部 -->
+<main class="pageHistory">
+  {template "common/common_slideshow.html"}
+  <!-- 开始 内容区域 -->
+  <section class="uk-section uk-section-xsmall uk-background-muted">
+	<div class="uk-container">
+	  <!-- 开始 内页导航条 -->
+	  {template "common/inner_navigation.html"}
+	  <!-- 结束 内页导航条 -->
+	  <div class="pageHistory_bar">
+		<img src="{SYS_ATTACHMENT_URL}static/img/icon.svg"
+			 alt="">
+	  </div>
+	  <div class="pageHistory_grid uk-grid-collapse uk-grid-collapseuk-child-width-1-1"
+		   uk-grid>
+		<?php if ($cat['bglb']) { $key=0; foreach ($cat['bglb'] as $v) { ?>
+		<div>
+		  <div class="pageHistory_card uk-card uk-card-small uk-card-body">
+			<div class="uk-h3">{$v[1]}</div>
+			<div class="uk-margin-small-top">{php echo nl2br((string)$v[2]);}</div>
+		  </div>
+		</div>
+		<?php  $key++; } } ?>
+	  </div>
+	  <div class="uk-margin-top">{$cat['content']}</div>
+	</div>
+  </section>
+  <!-- 结束 内容区域 -->
+</main>
+<!-- 开始 通用底部 -->
+{template "common/common_footer.html"}
+<!-- 结束 通用底部 -->
+{template "common/common_bottom.html"}
+</body>
+</html>

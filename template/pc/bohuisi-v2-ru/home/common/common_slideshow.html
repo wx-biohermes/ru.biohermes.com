@@ -1,0 +1,10 @@
+<div class="uk-position-relative">
+  <img src="{if $cat['ymdbtp']}{dr_get_file($cat['ymdbtp'])}{else}{dr_get_file($parent['ymdbtp'])}{/if}"
+	   alt="{$parent['jdtzbt']}">
+  <div class="uk-overlay-default uk-position-cover"></div>
+  <div class="uk-position-center uk-position-z-index uk-text-center">
+	<div class="uk-text-bold uk-text-uppercase text-color-fff"
+		 style="font-size: 2.8vw;">{$parent['jdtzbt']}
+	</div>
+  </div>
+</div>
